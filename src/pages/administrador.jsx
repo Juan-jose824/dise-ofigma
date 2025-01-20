@@ -1,29 +1,39 @@
 import React, { useState } from 'react';
-import "../styles/inicio.css";
-import fpImage from '../assets/fp.jpg'; // Ajusta la ruta según la ubicación exacta de tu carpeta 'assets'
+import "../styles/administrador.css"; 
+import fpImage from '../assets/fp.jpg'; // Ajusta la ruta de la imagen según corresponda
 
-// Componentes para la barra de navegación, menú lateral y carrusel
+// Componente para la barra lateral y el menú
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-      <div className="role">Dueño</div>
-      <div className="menu-item">Inquilinos</div>
-      <div className="menu-item">Cotos</div>
+      <div className="role">Administrador</div>
+      <div className="menu-item">Buscador</div>
+      <div className="menu-item">Registro de pagos</div>
+      <div className="menu-item">Registro de multas</div>
+      <div className="menu-item">Gestión de permisos</div>
     </div>
   );
 };
 
-const Carousel = () => {
+const PageHeader = ({ toggleSidebar }) => {
   return (
-    <div className="carousel">
-      <h2>Inquilinos</h2>
-      <div className="carousel-images">
-        <div className="carousel-item">Inquilino 1</div>
-        <div className="carousel-item">Inquilino 2</div>
-        <div className="carousel-item">Inquilino 3</div>
-        <div className="carousel-item">Inquilino 4</div>
-        <div className="carousel-item">Inquilino 5</div>
-        <div className="carousel-item">Inquilino 6</div>
+    <header className="page-header">
+      <button className="menu-toggle" onClick={toggleSidebar}>☰</button>
+      <h1>Vista General</h1>
+    </header>
+  );
+};
+
+const PaymentCard = ({ status, user, date }) => {
+  return (
+    <div className="payment-card">
+      <div className={`status ${status === 'PAGADO' ? 'paid' : 'not-paid'}`}>{status}</div>
+      <div className="profile-container">
+        <img src={fpImage} alt="Perfil" className="profile-image" />
+        <div className="user-info">
+          <div className="user-name">{user}</div>
+          <div className="payment-date">{date}</div>
+        </div>
       </div>
     </div>
   );
@@ -34,8 +44,8 @@ const NotificationList = () => {
   const [showMenu, setShowMenu] = useState(null);
 
   const notifications = [
-    { title: 'Coto 1', description: 'Pago: Sí', imageUrl: fpImage, comment: 'Requiere revisión en el área común.' },
-    { title: 'Coto 2', description: 'Pago: No', imageUrl: fpImage, comment: 'No hay comentarios adicionales.' },
+    { title: 'Multa pagada', imageUrl: fpImage, comment: 'User 1 Pagó su multa en la fecha : 28/12/24' },
+    { title: 'Multa no pagada', imageUrl: fpImage, comment: 'User 5 No pago su multa en la fecha : 08/11/24' },
   ];
 
   const handleNotificationClick = (notification) => {
@@ -55,7 +65,7 @@ const NotificationList = () => {
 
   return (
     <div className="notification-list">
-      <h3>Notificaciones</h3>
+
       <table>
         <tbody>
           {notifications.map((notification, index) => (
@@ -99,15 +109,6 @@ const NotificationList = () => {
   );
 };
 
-const PageHeader = ({ toggleSidebar }) => {
-  return (
-    <header className="page-header">
-      <button className="menu-toggle" onClick={toggleSidebar}>☰</button>
-      <h1>Vista General</h1>
-    </header>
-  );
-};
-
 const Inicio = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -121,8 +122,12 @@ const Inicio = () => {
       <div className="content">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className="main-content">
-          <Carousel />
-          <NotificationList />
+          <div className="payment-cards">
+            <PaymentCard status="PAGADO" user="User 1" date="01/01/2025" />
+            <PaymentCard status="NO PAGADO" user="User 2" date="02/01/2025" />
+            <PaymentCard status="PAGADO" user="User 3" date="03/01/2025" />
+          </div>
+          <NotificationList /> {/* Aquí se inserta la tabla de notificaciones */}
         </div>
       </div>
     </div>

@@ -1,5 +1,11 @@
-/* Barra superior */
-.page-header {
+body {
+    background-color: #ffffff; /* Fondo blanco */
+    margin: 0; /* Elimina los márgenes por defecto */
+    font-family: Arial, sans-serif; /* Puedes ajustar la fuente si es necesario */
+  }
+  
+  /* Barra superior */
+  .page-header {
     background-color: #6C6C6C;
     padding: 20px 20px; /* Mantén el grosor original */
     text-align: center;
@@ -14,9 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.page-header .menu-toggle {
+  }
+  
+  .page-header .menu-toggle {
     position: absolute;
     left: 20px;
     top: 50%;
@@ -26,119 +32,172 @@
     font-size: 24px;
     color: white;
     cursor: pointer;
-}
-
-.page-header h1 {
+  }
+  
+  .page-header h1 {
     font-size: 18px;
     margin: 0;
     text-align: center;
-}
-
-/* Menú lateral */
-.sidebar {
+  }
+  
+  /* Menú lateral */
+  .sidebar {
     width: 150px;
     position: fixed;
     left: 0;
     top: 60px; /* Coloca el menú justo debajo del encabezado */
     height: 50%; /* Cambié de 'bottom: 0' a 'height: 50%' para limitar la altura */
-    background-color: #e0e0e0;
+    background-color: #9A9A9A;
     padding: 20px;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-}
-
-.sidebar.open {
+  }
+  
+  .sidebar.open {
     transform: translateX(0);
-}
-
-.sidebar .role {
+  }
+  
+  .sidebar .role {
     font-weight: bold;
     font-size: 38px;
     margin-bottom: 30px;
-}
-
-.sidebar .menu-item {
+  }
+  
+  .sidebar .menu-item {
     margin: 30px 0;
     cursor: pointer;
-}
-
-.sidebar .menu-item:hover {
+  }
+  
+  .sidebar .menu-item:hover {
     background-color: #d0d0d0;
-}
-
-/* Carrusel */
-.carousel {
+  }
+  
+  /* Carrusel */
+  .carousel {
     margin-left: 170px; /* Espacio de la barra lateral cuando esté abierta */
     padding: 20px;
-}
-
-.carousel h2 {
+  }
+  
+  .carousel h2 {
     font-size: 24px;
-}
-
-.carousel-images {
+  }
+  
+  .carousel-images {
     display: flex;
     overflow-x: scroll;
-}
-
-.carousel-item {
+  }
+  
+  .carousel-item {
     width: 200px;
     height: 200px;
     background-color: #cccccc;
     margin-right: 10px;
     text-align: center;
     line-height: 200px;
-}
-
-/* Lista de notificaciones */
-.notification-list {
+  }
+  
+  /* Lista de notificaciones */
+  .notification-list {
     margin-top: 20px;
-}
-
-.notification-list table {
+  }
+  
+  .notification-list table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #ffffff; /* Fondo blanco */
-    height: auto; /* Permite que la altura se ajuste al contenido */
-}
-
-.notification-list th, .notification-list td {
-    border: 1px solid #ddd;
-    padding: 20px; /* Más espacio para los datos */
-    text-align: center;
-    height: 60px; /* Incrementa la altura de las celdas */
-    color: #333; /* Color de texto más visible */
-}
-
-.notification-list td img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.notification-list button {
-    background-color: #333;
-    border: none;
-    cursor: pointer;
-    color: #fff; /* Color blanco para el texto del botón */
+    background-color: #ffffff;
+  }
+  
+  .notification-list th,
+  .notification-list td {
     padding: 10px;
+    text-align: left;
+    color: #333;
+  }
+  
+  .notification-list td img.notification-image {
+    width: 50px; /* Mantengo el tamaño de la imagen original */
+    height: 50px; /* Mantengo la altura proporcional */
+    border-radius: 20%;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+  }
+  
+  .notification-list td.notification-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .notification-list td.notification-info .title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .notification-list td.notification-info .description {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .notification-list td.notification-info .comment {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .notification-list td .menu {
+    text-align: right;
+  }
+  
+  .notification-list button {
+    background-color: #999999;
+    color: white;
+    border: none;
+    padding: 8px 12px;
     border-radius: 5px;
-}
-
-/* Modal emergente */
-.modal {
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  /* Menú desplegable dentro del botón de tres puntos */
+  .dropdown-menu {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .dropdown-menu button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  
+  .dropdown-menu button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Modal emergente */
+  .modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 102);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    color: #333; /* Cambia el color del texto aquí */
-}
-
-.modal button {
+    color: #ffffff;
+  }
+  
+  .modal button {
     margin-top: 10px;
-}
+  }
+  

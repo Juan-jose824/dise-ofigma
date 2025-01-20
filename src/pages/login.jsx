@@ -23,10 +23,20 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault(); // Corregir el error tipográfico
 
-    if (phone && password) {
-      navigate("/inicio"); // Redirige a la página de inicio
+    // Datos de los usuarios establecidos
+    const users = [
+      { phone: "3326", password: "123", redirect: "/inicio" }, // Usuario 1
+      { phone: "3330", password: "1234", redirect: "/administrador" }, // Usuario 2
+      { phone: "3333", password: "12345", redirect: "/administracion" }, // Usuario 3
+    ];
+
+    // Verificamos si el teléfono y la contraseña coinciden con algún usuario
+    const user = users.find((u) => u.phone === phone && u.password === password);
+
+    if (user) {
+      navigate(user.redirect); // Redirige a la página correspondiente
     } else {
-      alert("Por favor llene los campos solicitados");
+      alert("Número de teléfono o contraseña incorrectos"); // Mostrar mensaje de error
     }
   };
 
