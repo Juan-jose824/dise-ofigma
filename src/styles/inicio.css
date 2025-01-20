@@ -1,0 +1,144 @@
+/* Barra superior */
+.page-header {
+    background-color: #6C6C6C;
+    padding: 20px 20px; /* Mantén el grosor original */
+    text-align: center;
+    font-size: 9px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header .menu-toggle {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.page-header h1 {
+    font-size: 18px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Menú lateral */
+.sidebar {
+    width: 150px;
+    position: fixed;
+    left: 0;
+    top: 60px; /* Coloca el menú justo debajo del encabezado */
+    height: 50%; /* Cambié de 'bottom: 0' a 'height: 50%' para limitar la altura */
+    background-color: #e0e0e0;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar .role {
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+.sidebar .menu-item {
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+.sidebar .menu-item:hover {
+    background-color: #d0d0d0;
+}
+
+/* Carrusel */
+.carousel {
+    margin-left: 170px; /* Espacio de la barra lateral cuando esté abierta */
+    padding: 20px;
+}
+
+.carousel h2 {
+    font-size: 24px;
+}
+
+.carousel-images {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.carousel-item {
+    width: 200px;
+    height: 200px;
+    background-color: #cccccc;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 200px;
+}
+
+/* Lista de notificaciones */
+.notification-list {
+    margin-top: 20px;
+}
+
+.notification-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Fondo blanco */
+    height: auto; /* Permite que la altura se ajuste al contenido */
+}
+
+.notification-list th, .notification-list td {
+    border: 1px solid #ddd;
+    padding: 20px; /* Más espacio para los datos */
+    text-align: center;
+    height: 60px; /* Incrementa la altura de las celdas */
+    color: #333; /* Color de texto más visible */
+}
+
+.notification-list td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.notification-list button {
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* Color blanco para el texto del botón */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Modal emergente */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    color: #333; /* Cambia el color del texto aquí */
+}
+
+.modal button {
+    margin-top: 10px;
+}

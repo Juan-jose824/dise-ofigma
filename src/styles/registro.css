@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+}
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Centra el formulario verticalmente */
+    justify-content: center; /* Centra el formulario horizontalmente */
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.login-background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-form {
+    width: 100%;
+    max-width: 600px; /* Asegura que el formulario no exceda los 600px */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Aumentar espacio entre los elementos */
+    margin: auto; /* Esto asegura que el formulario se mantenga centrado */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Mayor separación entre los campos */
+    width: 100%;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ffffff;
+    font-size: 16px;
+    color: rgb(0, 0, 0); /* Para texto blanco en los campos de entrada */
+    box-sizing: border-box;
+}
+
+.input-container {
+    position: relative;
+}
+
+.clear-icon,
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+}
+
+select {
+    background: #fff;
+    color: #000000;
+    cursor: pointer;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: #d7b4f3;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-sizing: border-box;
+}
+
+.login-button:hover {
+    background-color: #a275e0;
+}
