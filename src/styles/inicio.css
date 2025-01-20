@@ -107,24 +107,22 @@ body {
     background-color: #ffffff;
   }
   
-  .notification-list th,
-  .notification-list td {
+  .notification-list th, .notification-list td {
     padding: 10px;
     text-align: left;
     color: #333;
   }
   
   .notification-list td img.notification-image {
-    width: 50px; /* Mantengo el tamaño de la imagen original */
-    height: 50px; /* Mantengo la altura proporcional */
+    width: 80px;
+    height: 80px;
     border-radius: 20%;
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
   }
   
   .notification-list td.notification-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
   }
   
   .notification-list td.notification-info .title {
@@ -149,38 +147,12 @@ body {
   }
   
   .notification-list button {
-    background-color: #999999;
+    background-color: #6c6c6c;
     color: white;
     border: none;
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
-  }
-  
-  /* Menú desplegable dentro del botón de tres puntos */
-  .dropdown-menu {
-    position: absolute;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  
-  .dropdown-menu button {
-    background-color: #f0f0f0;
-    color: #333;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    margin: 5px 0;
-  }
-  
-  .dropdown-menu button:hover {
-    background-color: #ddd;
   }
   
   /* Modal emergente */

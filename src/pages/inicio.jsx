@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "../styles/inicio.css";
-import fpImage from '../assets/fp.jpg'; // Ajusta la ruta según la ubicación exacta de tu carpeta 'assets'
 
 // Componentes para la barra de navegación, menú lateral y carrusel
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -31,26 +30,14 @@ const Carousel = () => {
 
 const NotificationList = () => {
   const [selectedNotification, setSelectedNotification] = useState(null);
-  const [showMenu, setShowMenu] = useState(null);
 
   const notifications = [
-    { title: 'Coto 1', description: 'Pago: Sí', imageUrl: fpImage, comment: 'Requiere revisión en el área común.' },
-    { title: 'Coto 2', description: 'Pago: No', imageUrl: fpImage, comment: 'No hay comentarios adicionales.' },
+    { title: 'Coto 1', description: 'Pago: Sí', imageUrl: 'image1.jpg', comment: 'Requiere revisión en el área común.' },
+    { title: 'Coto 2', description: 'Pago: No', imageUrl: 'image2.jpg', comment: 'No hay comentarios adicionales.' },
   ];
 
   const handleNotificationClick = (notification) => {
     setSelectedNotification(notification);
-  };
-
-  const handleActionClick = (action, notification) => {
-    if (action === 'delete') {
-      // Aquí podrías agregar la lógica para eliminar la notificación
-      console.log(`Eliminar: ${notification.title}`);
-    } else if (action === 'markAsRead') {
-      // Aquí podrías agregar la lógica para marcar como visto
-      console.log(`Marcar como visto: ${notification.title}`);
-    }
-    setShowMenu(null); // Cierra el menú después de hacer la acción
   };
 
   return (
@@ -66,22 +53,7 @@ const NotificationList = () => {
                 <div className="description">{notification.description}</div>
                 <div className="comment">{notification.comment}</div>
               </td>
-              <td className="menu">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setShowMenu(showMenu === index ? null : index); // Alterna el menú desplegable
-                  }}
-                >
-                  &#x22EE; {/* Tres puntos */}
-                  {showMenu === index && (
-                    <div className="dropdown-menu">
-                      <button onClick={(e) => { e.stopPropagation(); handleActionClick('delete', notification); }}>Eliminar</button>
-                      <button onClick={(e) => { e.stopPropagation(); handleActionClick('markAsRead', notification); }}>Marcar como visto</button>
-                    </div>
-                  )}
-                </button>
-              </td>
+              <td className="menu"><button>...</button></td>
             </tr>
           ))}
         </tbody>

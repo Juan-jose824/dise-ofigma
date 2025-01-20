@@ -7,7 +7,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="role">Administrador</div>
-      <div className="menu-item">Buscador</div>
+      <div className="menu-item"><a href="/buscador">Buscador</a></div>
       <div className="menu-item">Registro de pagos</div>
       <div className="menu-item">Registro de multas</div>
       <div className="menu-item">Gestión de permisos</div>
@@ -65,7 +65,6 @@ const NotificationList = () => {
 
   return (
     <div className="notification-list">
-
       <table>
         <tbody>
           {notifications.map((notification, index) => (

@@ -1,0 +1,204 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Asegura que no haya desplazamiento de fondo cuando el modal se muestra */
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Importante para posicionar el modal dentro de este contenedor */
+    z-index: 1; /* Asegura que el contenido no se superponga al modal */
+  }
+  
+  /* Cabecera con el buscador y botones */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Contenedor del campo de búsqueda */
+  .search-container {
+    position: relative;
+    flex: 1;
+  }
+  
+  /* Barra de búsqueda */
+  .search-bar {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Botón para limpiar el texto */
+  .clear-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* Mostrar el botón de limpiar solo cuando haya texto */
+  .search-bar:valid + .clear-button {
+    display: block;
+  }
+  
+  .clear-button:hover {
+    color: #000;
+  }
+  
+  /* Botones de filtro y enviar */
+  .send-button,
+  .filter-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .send-button {
+    margin-left: 10px;
+  }
+  
+  .send-button:hover {
+    color: #007bff;
+  }
+  
+  /* Estilo para las opciones de filtro */
+  .filter-options {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .filter-options button {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .filter-options button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Estilo para el modal de filtros */
+  .modal {
+    display: none;
+    position: fixed; /* Cambiar a fixed para que el modal quede fijo sobre la página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que el modal esté por encima de todo el contenido */
+  }
+  
+  /* Contenido del modal */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Estilo para las tarjetas (multas, pagos, etc.) */
+  .card {
+    margin-bottom: 20px;
+    background: #dbdbdb;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    color: #000;
+  }
+  
+  /* Títulos de las tarjetas */
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para los ítems dentro de las tarjetas */
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .item:first-child {
+    border-top: none;
+  }
+  
+  /* Estilo para los íconos en los ítems */
+  .icon {
+    width: 40px;
+    height: 40px;
+    background: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  
+  /* Estilo para el texto dentro de los ítems */
+  .text {
+    flex: 1;
+  }
+  
+  .text strong {
+    display: block;
+  }
+  
+  /* Botón de menú en los ítems */
+  .menu-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  

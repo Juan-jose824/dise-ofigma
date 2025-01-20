@@ -4,6 +4,10 @@ import Login from './pages/login';
 import Registro from './pages/registro'; // Asegúrate de importar el componente de registro
 import Inicio from './pages/inicio';
 import Administrador from './pages/administrador';
+import Buscador from './pages/buscador';
+// import Regpagos from './pages/regpagos';
+// import Regmultas from './pages/regmultas';
+// import Gespermisos from './pages/gespermisos';
 
 const App = () => (
   <Router>
@@ -13,6 +17,10 @@ const App = () => (
       <Route path="/registro" element={<Registro />} />
       <Route path="/inicio" element={<Inicio />} />
       <Route path="/administrador" element={<Administrador />} />
+      <Route path="/buscador" element={<Buscador />} />
+      {/* <Route path="/regpagos" element={<Regpagos />} />
+      <Route path="/regmultas" element={<Regmultas />} />
+      <Route path="/gespermisos" element={<Gespermisos />} /> */}
     </Routes>
   </Router>
 );
