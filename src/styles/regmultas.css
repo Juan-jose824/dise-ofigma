@@ -1,0 +1,167 @@
+/* regmultas.css */
+.multa-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/path/to/house-image.jpg'); /* Cambia la ruta por tu imagen */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+.multa-header {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el texto y los elementos dentro del encabezado */
+}
+
+.multa-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Menú lateral */
+.sidebar {
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color: #9A9A9A;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Estilos para los elementos del menú lateral */
+.sidebar .role {
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.sidebar .menu-item {
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+.sidebar .menu-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar .menu-item:hover {
+    background-color: #d0d0d0;
+    color: #333;
+}
+
+/* Botón para abrir/cerrar el menú lateral (a la izquierda) */
+.toggle-button {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;  /* Alineado a la izquierda */
+    color: #555; /* Color gris más oscuro para el botón */
+    position: absolute;  /* Esto lo coloca en la esquina superior izquierda */
+    left: 18%;
+    top: 20px;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+/* Contenido del formulario de multas */
+.multa-content {
+    display: flex;
+    width: 80%;
+    background-color: rgba(195, 195, 195, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.multa-left-section,
+.multa-right-section {
+    flex: 1;
+    min-width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 30%;
+    width: 550px;
+    height: 450px;
+}
+
+.multa-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.multa-field label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.multa-field span {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #333;
+    width: 60%;
+}
+
+.multa-description p {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 40px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    height: 130%;
+}
+
+.multa-description label {
+    font-weight: bold;
+    color: #555;
+    font-size: 1.2rem; /* Opcional, ajusta el tamaño del texto */
+}
+
+@media (max-width: 768px) {
+    .multa-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .multa-left-section,
+    .multa-right-section {
+        min-width: 100%;
+    }
+}

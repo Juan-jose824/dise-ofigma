@@ -5,8 +5,8 @@ import Registro from './pages/registro'; // Asegúrate de importar el componente
 import Inicio from './pages/inicio';
 import Administrador from './pages/administrador';
 import Buscador from './pages/buscador';
-// import Regpagos from './pages/regpagos';
-// import Regmultas from './pages/regmultas';
+import Regpagos from './pages/regpagos';
+import Regmultas from './pages/regmultas';
 // import Gespermisos from './pages/gespermisos';
 
 const App = () => (
@@ -18,9 +18,9 @@ const App = () => (
       <Route path="/inicio" element={<Inicio />} />
       <Route path="/administrador" element={<Administrador />} />
       <Route path="/buscador" element={<Buscador />} />
-      {/* <Route path="/regpagos" element={<Regpagos />} />
+      <Route path="/regpagos" element={<Regpagos />} />
       <Route path="/regmultas" element={<Regmultas />} />
-      <Route path="/gespermisos" element={<Gespermisos />} /> */}
+     {/* <Route path="/gespermisos" element={<Gespermisos />} /> */}
     </Routes>
   </Router>
 );
