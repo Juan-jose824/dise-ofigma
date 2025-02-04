@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from 'axios';
 
 import "../styles/regmultas.css";
 
@@ -23,7 +22,6 @@ const MultaRegistro = () => {
     fecha: "",
     comentario: "",
   });
-  const [alertMessage, setAlertMessage] = useState(""); // Estado para el mensaje de alerta
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -38,29 +36,38 @@ const MultaRegistro = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/api/multas", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Enviar datos a la API
-    axios.post('/api/multas', formData)
-      .then(response => {
-        console.log("Multa creada:", response.data);
-        setFormData({ // Limpiar los campos después de crear la multa
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Multa registrada:", data);
+        alert("Multa registrada con éxito");
+
+        setFormData({
           coto: "",
           monto: "",
           fecha: "",
           comentario: "",
         });
-        toggleForm(); // Cerrar el formulario
 
-        // Mostrar mensaje de éxito
-        setAlertMessage("¡Multa agregada exitosamente!");
-      })
-      .catch(error => {
-        console.error("Error al crear la multa:", error);
-        // Mostrar mensaje de error
-        setAlertMessage("Hubo un error al agregar la multa. Inténtalo de nuevo.");
-      });
+        toggleForm();
+      } else {
+        console.error("Error al registrar la multa");
+        alert("Hubo un error al registrar la multa");
+      }
+    } catch (error) {
+      console.error("Error de conexión:", error);
+      alert("No se pudo conectar con el servidor");
+    }
   };
 
   return (
@@ -145,13 +152,6 @@ const MultaRegistro = () => {
           <button type="submit">Registrar Multa</button>
         </form>
       </div>
-
-      {/* Mostrar el mensaje de alerta */}
-      {alertMessage && (
-        <div className="alert-message">
-          {alertMessage}
-        </div>
-      )}
     </div>
   );
 };
